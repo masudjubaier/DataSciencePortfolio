@@ -59,4 +59,4 @@ We could find some clear cluster and visually project the clusters with distinct
 Download the notebook and files into local directory. Open the notebook from Jupyter Notebook. Make sure the library used in the project installed, if not installed, please install through pip utility from command prompt. From the top menu Cell -> Run All to execute the notebook. 
 
 ## Contact
-Created by [@Masud Jubaier](mailto:masud.jubaier@optus.com.au) - feel free to contact me!
+Created by [@Masud Jubaier](mailto:jubaier@gmail.com) - feel free to contact me!
