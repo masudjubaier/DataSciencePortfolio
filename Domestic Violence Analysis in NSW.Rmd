@@ -35,15 +35,14 @@ library(dplyr)
 
 ```{r Load Data, warning=FALSE}
 #Loading data into datafeame
-DV_NSW <- read.csv("files\\DV_NSW_by_LGA.csv")
+DV_NSW <- read.csv("DV_NSW_by_LGA.csv")
 
-DV_Labels <- read.csv("files\\labels.csv")
+DV_Labels <- read.csv("labels.csv")
 
-NSW_LGA <- read.csv("files\\NSW_LGA.csv")
+NSW_LGA <- read.csv("NSW_LGA.csv")
 
 
 ```
-
 
 # Introduction 
 &nbsp;&nbsp;&nbsp;Domestic violence (DV) is dark stain in modern society. DV can be defined as any form of mistreatment including physical, phycological, financial, sexual take place within domestic circumstances perpetrated by member of intimate relationship. Any member of household can be victim of DV, while women and children are most vulnerable to this crime. The World Health Origination(WHO) has described the violence against women is a global problem of public health which need immediate attention[1]. Australia is not Immune to this crime, especially NSW suffer with this crime heavily. Hance it is very important the understand the nature of this crime and identify the factors having most influence. In this project we shall try find these factors and try to prove following hypothesis by implementing a linear model.
@@ -52,34 +51,9 @@ NSW_LGA <- read.csv("files\\NSW_LGA.csv")
 **Alternative Hypothesis ($H_{A}$):** There is strong correlation between income, education and employment with DV.
 
 
-\vspace{4mm}
-# Literature and theory
-&nbsp;&nbsp;&nbsp;In 2007 Drabsch T. stated that the crime of DV exists in all level of society. However, the true magnitude of the level of crime is impossible to measure as most incidents are not reported and in many instances the victim has a tendency to deny the crime ever happened[2].
-
-&nbsp;&nbsp;&nbsp;In 2009 Morgan A. done an extensive research on DV. He has defined DV as acts of violence take place within intimate relationship in domestic environment. He has try to quantify the cost of the crime and found in FY2008–09 totalling $13.6b and if no action taken by FY2021-22 the cost is estimated to be $15.6B[3].
-
-&nbsp;&nbsp;&nbsp;In 2014 Phillips J. has presented men are more likely to experience violence at the hand of strangers, while women are more like to experience at the hand of someone who are known to them[1]. In 2017 Stubbs J. identified that the DV was considered as private issue until 1970, when government and different activist group campaigned this is a social problem effecting mainly women[4].
-
-&nbsp;&nbsp;&nbsp;In 2018 Aziz N. has developed a conceptional model on connecting the association of committer and victim factors that consequence in violence against women.
-
-&nbsp;&nbsp;&nbsp;In 2000 Astbury J. has presented an very important finding, the idea of “Home” point toward physical and emotional safety and security, person affected by violence experiences a concealed homelessness[6].
-
-&nbsp;&nbsp;&nbsp;In 1998 Gwenneth L. has done a study on sample of 335 women (mean age 45.5 years) from the Royal Brisbane Hospital Emergency Department to establish a solid scientific basis for recognition and treatment of post-traumatic psychiatric injury related with DV. The finding is resounding, about one-third of the psychiatric diagnoses can be attributed to DV[7].
-
-&nbsp;&nbsp;&nbsp;In 2011 Richards K. has characterize, children witness DV is a form of child abuse. Children witness DV are likely to suffer Psychological and behavioural impacts in future[8]. In the same year Ghafournia N. has explored the status of abused migrant women in Australian migration policy. Although the policies has been adopted in order to defend non-resident women from being battered by their partners due to their uncertain residence status, still some significant concerns related to social, economic, and cultural factors are overlooked[9].
-
-&nbsp;&nbsp;&nbsp;In 2003 Mulroney J. has presented a survey using a representative sample of 6300 Australian women provided by ABS. It was found that 23% of women married or in a de-facto relationship had experienced violence by a partner[10].
-
-
-\vspace{4mm}
+\vspace{2mm}
 # Data and methodology 
-&nbsp;&nbsp;&nbsp;We have obtained following 3 CSV files\
-\
-$1.$ DV_NSW_by_LGA.csv\
-$2.$ NSW_LGA.csv\
-$3.$ labels.csv\
-\
-&nbsp;&nbsp;&nbsp;The $1^{st}$ CSV file contains the count of DV crime in NSW LGA from Jan-99 to Dec-15. The $2^{nd}$ CSV file contain 2011 census data of NSW LGA. In the $2^{nd}$ CSV file there are around 8K features on 2011 NSW LGA census data. The features are in encoded form, where the description of the features is found in the $3^{rd}$ CSV file. At first we have performed some exploratory analysis to understand the dataset. We have generated some visualization to show the trend of the crime. From the visualization it is clear the trend is upward. To identify the features contributes most towards the crime we have implemented Forward stepwise Feature selection. 
+&nbsp;&nbsp;&nbsp;The dataset contains 3 CSV file. The $1^{st}$ CSV file "DV_NSW_by_LGA.csv" contains the count of DV crime in NSW LGA from Jan-99 to Dec-15. The $2^{nd}$ CSV file "NSW_LGA.csv" contain 2011 census data of NSW LGA. In the $2^{nd}$ CSV file there are around 8K features on 2011 NSW LGA census data. The features are in encoded form, where the description of the features is found in the $3^{rd}$ CSV file "labels.csv". At first we have performed some exploratory analysis to understand the dataset. We have generated some visualization to show the trend of the crime. From the visualization it is clear the trend is upward. To identify the features contributes most towards the crime we have implemented Forward stepwise Feature selection. 
 
 &nbsp;&nbsp;&nbsp;**Forward stepwise Feature selection** is a computationally efficient algorithm to select the best features that produces best outcome. The algorithm starts with a null model and add predictors one by one until all predictors are tried. At each step, the predictor that give the largest improvement on the model is added to the final predictor list. The steps of the algorithm are as follows.
 
@@ -90,7 +64,7 @@ $2.$ For $k=0$, .. , $p-1:$
 > $(a)$ Consider all $p-k$ models that supplement the predictors in $M_{k}$ with one added predictor.\
 > $(b)$ Chose the *best* between these $p-k$ models, and name it $M_{k+1}$. Here *best* is considered as the model having minimum RSS or maximum $R^2$.
 
-$3.$ Select the best model from $M_{0}$, .., $M_{p}$ using any one of these metric cross-validated prediction error or $C_{p}$ $(AIC)$ or $(BIC)$ or adjusted $R^2$[11].
+$3.$ Select the best model from $M_{0}$, .., $M_{p}$ using any one of these metric cross-validated prediction error or $C_{p}$ $(AIC)$ or $(BIC)$ or adjusted $R^2$.
 
 Using the features identified we shall build a linear model to predict DV.
 
@@ -339,18 +313,3 @@ effect_plot(lm_fit, pred = "B1390", interval = TRUE, plot.points = TRUE)
 # Conclusion
 
 &nbsp;&nbsp;&nbsp;DV is a social problem in NSW. The data we have used in this project, clearly shows the level of crime does not have a downward trend. Policy maker and law enforcing agencies need to have more clear insight on the crime, so that they can come up with a policy to reduce this crime. This project can add a very good value in this regard. We have shown the trend of the crime and the area where the crime is happening the most. We have also identified some key predictors and build a regression model that can predict the crime very with very high level of confidence. The data we have worked on is not enough to build a complete model. We had only census data of 2011. In future we shall add more census and DV data and try to build a complete model that can predict DV with higher accuracy.
-
-\vspace{4mm}
-# Bibliography 
-
-[1]Phillips J. and Vandenbroek P.(2014).  Domestic, family and sexual violence in Australia: an overview of the issues. Department of Parliamentary Services, Parliament of Australia.\
-[2]Drabsch T.(2007). Domestic Violence in NSW. NSW Parliamentary Library Research Service.\
-[3]Morgan A. and Chadwick H.(2009). Key issues in domestic violence. Australian Institute of Criminology. Australian Government.\
-[4]Stubbs J. UNSW, Wangmann J. UTS(2017). Australian Perspectives on Domestic Violence.\
-[5]Aziz N. N. A., Ishak M., Wahid N. A., Yazid Z. N. A.(2018). Factors affecting domestic violence against woman: A conceptual model and research propositions. Universiti Teknologi MARA.\
-[6] Astbury J., Atkinson J., Easteal P., Turner J. (2000). The impact of domestic violence on individuals. The Medical journal of Australia. November 2000.\
-[7] Gwenneth L. Roberts and Joan M. Lawrence. (1998). The impact of domestic violence on women’s mental health. University of Queensland.\
-[8] Richards K. (2011). Children’s exposure to domestic violence in Australia. Australian Institute of Criminology.\
-[9] Ghafournia N. (2011). Aggression and Violent Behavior. University of Sydney.\
-[10] Mulroney J. (2003). Australian Statistics on Domestic Violence. Australian Domestic and Family Violence Clearinghouse.
-[11] James G., Witten D., Hastie T, Tibshirani R. (2013). An Introduction to Statistical Learning
