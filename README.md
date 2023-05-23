@@ -10,7 +10,7 @@
 * [What explains domestic violence rates in NSW?](#what-explains-domestic-violence-rates-in-NSW)
 * [Contact](#contact)
 
-## Analysis of Cycling Data
+## [Analysis of Cycling Data] (https://github.com/masudjubaier/DataSciencePortfolio/blob/main/Analysis%20of%20Cycling%20Data.ipynb)
 
 ### Background
 In this task we have analysed four files containing four cycling record that include GPS location data as well as some measurements related to cycling performance like heart rate and power etc. All the event took place in the same track by same rider. The goal is to perform some exploration and analysis of this data. Questions to explore with the data:
@@ -19,6 +19,8 @@ In this task we have analysed four files containing four cycling record that inc
 - Compare the range of speeds for each ride, are time trials faster than road races?
 - Compare the speeds achieved in the two time trials (three years apart). As well as looking at the averages, can you see where in the ride one or the other is faster.
 - From the elevation_gain field you can see whether the rider is climbing, descending or on the flat. Use this to calculate the average speeds in those three cases (climbing, flat or descending). Note that flat might not be zero gradient but might allow for slight climbs and falls.
+
+Please click [here](https://github.com/masudjubaier/DataSciencePortfolio/blob/main/Analysis%20of%20Cycling%20Data.ipynb) to see the notebook.
 
 ### Methods
 We have used Pandas descriptive statistics like mean, max etc. to analyse the race done on the given periods. The dataset is a time-lapse snapshot of the riding. As this is a time-lapse data, to smoothen the data, we have used rolling mean for a small window. Then we have used Matplotlib to visualize the speed, elevation data to compare the rider’s performance. When determining climbing or decent we have considered a little tolerance limit -0.2 <= elevation <= 0.2 is considered as flat elevation. The data have a measure of the number of rotations of the pedals per minute (cadence) and a measure of speed. Using these two variables we have derived a measure of development which would effectively tell us which gear the rider was using at the time. Using Matplotlib the evaluation, speed and development is visualized.
