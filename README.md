@@ -10,7 +10,7 @@
 * [What explains domestic violence rates in NSW?](#what-explains-domestic-violence-rates-in-NSW)
 * [Contact](#contact)
 
-## [Analysis of Cycling Data] (https://github.com/masudjubaier/DataSciencePortfolio/blob/main/Analysis%20of%20Cycling%20Data.ipynb)
+## [Analysis of Cycling Data](https://github.com/masudjubaier/DataSciencePortfolio/blob/main/Analysis%20of%20Cycling%20Data.ipynb)
 
 ### Background
 In this task we have analysed four files containing four cycling record that include GPS location data as well as some measurements related to cycling performance like heart rate and power etc. All the event took place in the same track by same rider. The goal is to perform some exploration and analysis of this data. Questions to explore with the data:
