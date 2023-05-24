@@ -90,7 +90,7 @@ Please click [here](https://github.com/masudjubaier/DataSciencePortfolio/blob/
 - Alternative Hypothesis (H A ): There is strong correlation between income, education and employment with DV.
 
 ### Technology used 
-This project is done with R using libraries dplyr, plotly, ggplot2, caret. Visualization techniques like Bar chart, Histogram, Scatterplot are used for Exploratory Data Analysis. Backward Stepwise Feature Selection technique is used to identify the most important features in the dataset. Linear Regression model is implemented to predict the response variable.  
+<p align = "justify">This project is done with R using libraries dplyr, plotly, ggplot2, caret. Visualization techniques like Bar chart, Histogram, Scatterplot are used for Exploratory Data Analysis. Backward Stepwise Feature Selection technique is used to identify the most important features in the dataset. Linear Regression model is implemented to predict the response variable.</p>
 
 Please click [here](https://github.com/masudjubaier/DataSciencePortfolio/blob/main/Domestic-Violence-Analysis-in-NSW.pdf) to see the report.
 
