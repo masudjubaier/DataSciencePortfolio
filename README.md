@@ -15,10 +15,10 @@
 ### Background
 <p align = "justify">In this project we have analysed cycling record that include GPS location data as well as some measurements related to cycling performance like heart rate and power etc. All the events took place in the same track by same rider. The goal is to perform exploration and find some insight from this data. Questions to explore with the data:
 
-- What is the overall distance travelled for each of the rides? What are the average speeds etc. Provide a summary for each ride.
+- What is the overall distance travelled for each of the rides? What are the average speeds.
 - Compare the range of speeds for each ride, are time trials faster than road races?
-- Compare the speeds achieved in the two time trials (three years apart). As well as looking at the averages, can you see where in the ride one or the other is faster.
-- From the elevation_gain field you can see whether the rider is climbing, descending or on the flat. Use this to calculate the average speeds in those three cases (climbing, flat or descending). Note that flat might not be zero gradient but might allow for slight climbs and falls.</p>
+- Compare the speeds achieved in the two-time trials (three years apart). As well as looking at the averages.
+- From the elevation_gain field find whether the rider is climbing, descending or on the flat. Use this to calculate the average speeds in those three cases (climbing, flat or descending).</p>
 
 ### Methods
 <p align = "justify">We have used Pandas descriptive statistics like mean, max etc. to analyse the race done on the given periods. The dataset is a time-lapse snapshot of the riding. As this is a time-lapse data, to smoothen the data, we have used rolling mean for a small window. Then we have used Matplotlib to visualize the speed, elevation data to compare the rider’s performance. When determining climbing or decent we have considered a little tolerance limit elevation -0.2 to 0.2 is considered as flat elevation. The data have a measure of the number of rotations of the pedals per minute (cadence) and a measure of speed. Using these two variables we have derived a measure of development which would effectively tell us which gear the rider was using at the time. Using Matplotlib the evaluation, speed and development is visualized.</p>
@@ -88,6 +88,9 @@ Please click [here](https://github.com/masudjubaier/DataSciencePortfolio/blob/
 <p align = "justify">Domestic violence (DV) is dark stain in modern society. DV can be defined as any form of mistreatment including physical, phycological, financial, sexual take place within domestic circumstances perpetrated by member of intimate relationship. Any member of household can be victim of DV, while women and children are most vulnerable to this crime. The World Health Origination(WHO) has described the violence against women is a global problem of public health which need immediate attention[1]. Australia is not Immune to this crime, especially NSW suffer with this crime heavily. Hance it is very important the understand the nature of this crime and identify the factors having most influence. In this project we shall try find these factors and try to prove following hypothesis by implementing a linear model.</p>
 - Null Hypothesis (H 0 ): There is no relationship between income, education and employment with DV.
 - Alternative Hypothesis (H A ): There is strong correlation between income, education and employment with DV.
+
+### Technology used 
+This project is done with R using libraries dplyr, plotly, ggplot2, caret. Visualization techniques like Bar chart, Histogram, Scatterplot are used for Exploratory Data Analysis. Backward Stepwise Feature Selection technique is used to identify the most important features in the dataset. Linear Regression model is implemented to predict the response variable.  
 
 Please click [here](https://github.com/masudjubaier/DataSciencePortfolio/blob/main/Domestic-Violence-Analysis-in-NSW.pdf) to see the report.
 
